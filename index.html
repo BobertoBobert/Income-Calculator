@@ -15,37 +15,32 @@
 	</div>
 
 	<nav>
-		<ul>
+		<ul class="left">
+			<li><a href="TaxCalculator.html">Income to Tax</a></li>
+		</ul>
+		<ul class="center">
 			<li><a href="index.html">HOME</a></li>
-			<li><a href="TaxCalculator.html">Tax Calculator</a></li>
+		</ul>
+		<ul class="right">
+			<li><a href="reverseCalculator.html">Tax to Income</a></li>
 		</ul>
 
 	</nav>
 
 	<div class="content">
 		<div class="section">
-			<h2>Calculator</h2>
-			<table>
-				<tr>
-					<td>
-						<form>
-							<input type="number" id="income" placeholder="Raw Income">
-						</form>
-						<button onclick="calculate()" class="">Submit</button>
-					</td>
-					<td>
-						<div id="result">
-							Post Tax income:
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="section">
-			<h2>Breakdown</h2>
-			<p id="breakdown"></p>
+			<h2>What are tax brackets?</h2>
+			<p>Tax brackets are the income range which determines the rate at which you will be taxed.
+				The more you earn, the higher taxes you pay. However there is a common misconception that
+				if you have a promotion that will move you up a tax bracket, this increased amount of tax
+				you pay will undermine the amount you would gain from the new income. On this website we
+				aim to show people that this is a myth and prove to them that they will earn more, even if
+				they move up a tax bracket.
+			</p>
 		</div>
 
+		<div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	</div>
 	<script src="code.js"></script>
 

@@ -27,8 +27,45 @@ function calculate() {
             tax += rates[j][2];
         }
         tax += (rawIncome - rates[band][0]) * rates[band][1];
+        tax.toFixed(2);
+        document.getElementById("breakdown").innerHTML =
+            "Your income was " + rawIncome + ". This means that your income falls into tax bracket " + band + ". However, " +
+            "this does not mean that all of your income taxed at the rate of band " + band + " (" + (rates[band][1]) * 100 + "%) , instead the proportion " +
+            "of your income which would fall in the lower tax bands is taxed at the respective rate for that band.";
 
     }
     document.getElementById("result").innerHTML = ("Post Tax income: £" + (rawIncome - tax));
     console.log(tax);
 }
+
+var data = {
+    type: "sankey",
+    orientation: "h",
+    node: {
+        pad: 15,
+        thickness: 30,
+        line: {
+            color: "black",
+            width: 0.5
+        },
+        label: ["Raw Income", "Basic", "Higher", "Additional", "Tax", "Your Pocket"],
+        color: ["blue", "blue", "blue", "blue", "blue", "blue"]
+    },
+
+    link: {
+        source: [0, 0, 0, 1, 2, 3, 1, 2, 3],
+        target: [1, 2, 3, 5, 5, 5, 4, 4, 4],
+        value: [10, 10, 10, 9, 9, 9, 1, 1, 1]
+    }
+}
+
+var data = [data]
+
+var layout = {
+    title: "",
+    font: {
+        size: 10
+    }
+}
+
+Plotly.react('myDiv', data, layout)

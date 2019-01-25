@@ -1,8 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "roboto", "Gotham", "Helvetica", Arial, "sans-serif";
-    overflow: hidden;
+    font-family: "roboto", Arial, Geneva, Helvetica, sans-serif;
 }
 
 body {
@@ -24,33 +23,46 @@ a {
     line-height: 200px;
     padding: 0 0 0 20px;
     -webkit-text-stroke: 2px black;
-    font-size: 5em;
+    font-size: 10vw;
 }
-
+p{
+    font-size: 2em;
+}
+h2{
+    font-size: 3em;
+}
 nav {
     background-color: #fc582f;
-    padding: 5px 15%;
+    padding: 15px 15%;
     box-shadow: 0px 5px 5px grey;
+    overflow: hidden;
+    text-align: center;
 }
-
+nav ul{
+    display: inline;
+    
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
 nav ul li {
     display: inline;
     font-size: 1.5em;
-    margin: 0px;
-    float: right;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
-nav ul li:first-child {
-    float: left;
-}
 
 nav ul li a {
     color: #FFF;
+    text-decoration: none;
 }
 
-nav ul li a:hover {
-    color: #AAA;
-    font-weight: bold;
+nav ul li:hover{
+    background-color: #c92b03; 
 }
 
 .content {
@@ -92,7 +104,6 @@ input {
 }
 
 button {
-    width: 15%;
 }
 
 form {
@@ -111,5 +122,5 @@ table {
 }
 
 .section {
-    margin: 0em 0em 3em 0em;
+    margin: 3% 0%;
 }
